@@ -63,7 +63,7 @@ export default class AddContact extends Component {
               <div className="addContact__titleblock titleblock">
                 <span className="addContact__title title">Добавить контакт</span>
               </div>
-              <form className="addContact__form form">
+              <form onSubmit={this.saveContact} className="addContact__form form">
                 <input
                   placeholder="Имя" aria-label="Имя"
                   type="text"
@@ -85,9 +85,7 @@ export default class AddContact extends Component {
                   onChange={this.onChangePhone}
                   name="phone"
                 />
-              <button onClick={this.saveContact} className="btn form__addButton">
-                Добавить
-              </button>
+              <input type="submit" value="Добавить" className="btn form__addButton" />
               </form>
           </div>
       </>
