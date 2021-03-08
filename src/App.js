@@ -5,7 +5,7 @@ import ContactsList from "./components/contacts-list.component";
 class App extends Component {
   render() {
     return (
-      <div className="container">
+      <div className="container contactbook">
         <AddContact />
         <ContactsList />
       </div>

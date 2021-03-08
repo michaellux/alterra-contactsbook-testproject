@@ -1,13 +1,124 @@
-body {
+html body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  display: flex;
+  flex: 1 0 auto;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+  background-color: #eceff4;
+  font-family: 'Open Sans', sans-serif;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.addContact,
+.list {
+  background-color: #fff;
+  margin-bottom: 20px;
+  width: 320px;
+  border-radius: 2px;
+}
+
+.list__titleblock {
+  background-color: #fff;
+  width: 320px;
+  padding: 25px 25px 0 25px;
+  border-radius: 2px;
+}
+
+.titleblock,
+.item {
+  border-bottom: 1px solid #eee;
+  padding: 25px;
+}
+
+.title {
+  display: block;
+  color: #333;
+  font-weight: 700;
+  font-size: 14px;
+  margin: 0;
+}
+
+.addContact__form {
+  display: flex;
+  flex-direction: column;
+  padding: 25px;
+  margin: 0;
+  justify-content: flex-end;
+}
+
+.form-control.form__nameField,
+.form-control.form__phoneField {
+  border-radius: 3px;
+  border-color: #eee;
+  font-size: 14px;
+}
+
+.form__nameField {
+  margin-bottom: 10px;
+}
+
+.form__phoneField {
+  margin-bottom: 15px;
+}
+
+input.form-control:placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+  font-size: 14px;
+  color: #b5b5b5;
+  opacity: 1;
+}
+
+input.form-control:-ms-input-placeholder { /* Internet Explorer 10-11 */
+  font-size: 14px;
+  color: #b5b5b5;
+  opacity: 1;
+}
+
+input.form-control:-ms-input-placeholder { /* Microsoft Edge */
+  font-size: 14px;
+  color: #b5b5b5;
+  opacity: 1;
+}
+
+.form-group {
+  margin-bottom: 0;
+}
+
+.btn.form__addButton{
+  background-color: #4d59a1;
+  color: #fff;
+  align-self: flex-end;
+  border-radius: 3px;
+}
+
+.btn.form__addButton:hover {
+  background-color: #5664b6;
+  color: #fff;
+}
+
+.list__contacts {
+  padding: 0;
+  list-style-type: none;
+}
+
+.contacts__item {
+  padding: 20px 25px;
+}
+
+.item__name {
+  color: #333;
+  font-weight: 700;
+  line-height: normal;
+}
+
+.item__deletebutton {
+  color: #333;
+  background-color: transparent;
+  border: none;
+  font-weight: 700;
+}
+
+.item__phone {
+  display: block;
+  color: #666;
+  line-height: normal;
 }

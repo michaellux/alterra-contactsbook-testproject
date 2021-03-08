@@ -13,7 +13,6 @@ export default class AddContact extends Component {
       id: null,
       name: "",
       phone: "",
-      submitted: false
     };
   }
 
@@ -40,10 +39,8 @@ export default class AddContact extends Component {
         this.setState({
           id: response.data.id,
           name: response.data.name,
-          phone: response.data.phone,
-          submitted: true
+          phone: response.data.phone
         });
-        console.log(response.data);
       })
       .catch(e => {
         console.log(e);
@@ -61,48 +58,39 @@ export default class AddContact extends Component {
 
   render() {
     return (
-      <div className="submit-form">
-        {this.state.submitted ? (
-          <div>
-            <h4>Контакт добавлен!</h4>
-            <button className="btn btn-success" onClick={this.newContact}>
-              Добавить
-            </button>
-          </div>
-        ) : (
-            <div>
-              <div className="form-group">
-                <label htmlFor="name">Имя</label>
+      <>
+          <div className="contactbook__addContact addContact">
+              <div className="addContact__titleblock titleblock">
+                <span className="addContact__title title">Добавить контакт</span>
+              </div>
+              <form className="addContact__form form">
                 <input
+                  placeholder="Имя" aria-label="Имя"
                   type="text"
-                  className="form-control"
+                  className="form-control form__nameField"
                   id="name"
                   required
                   value={this.state.name}
                   onChange={this.onChangeName}
                   name="name"
                 />
-              </div>
 
-              <div className="form-group">
-                <label htmlFor="phone">Телефон</label>
                 <input
+                  placeholder="Телефон" aria-label="Телефон"
                   type="tel"
-                  className="form-control"
+                  className="form-control form__phoneField"
                   id="phone"
                   required
                   value={this.state.phone}
                   onChange={this.onChangePhone}
                   name="phone"
                 />
-              </div>
-
-              <button onClick={this.saveContact} className="btn btn-success">
+              <button onClick={this.saveContact} className="btn form__addButton">
                 Добавить
               </button>
-            </div>
-          )}
-      </div>
+              </form>
+          </div>
+      </>
     );
   }
 }
