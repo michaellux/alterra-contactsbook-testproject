@@ -23,7 +23,6 @@ export default class ContactsList extends Component {
         this.setState({
           contacts: response.data
         });
-        console.log(response.data);
       })
       .catch(e => {
         console.log(e);
@@ -39,12 +38,12 @@ export default class ContactsList extends Component {
 
   deleteContact(id) {
     ContactDataService.delete(id)
-      .then(response => {
-        console.log(response.data);
-      })
       .catch(e => {
         console.log(e);
       });
+    this.setState((state) => {
+      return {contacts: state.contacts.filter(el => el.id != id)}
+    });
   }
 
   render() {
