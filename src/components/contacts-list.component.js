@@ -62,7 +62,7 @@ export default class ContactsList extends Component {
                 key={index}
               >
                   <span className="item__name">
-                    {`${contact.firstName} ${contact.lastName}`}
+                  {`${contact.firstName} ${contact.lastName ?? ''}`}
                   </span>
                   <button
                     className="item__deletebutton"
